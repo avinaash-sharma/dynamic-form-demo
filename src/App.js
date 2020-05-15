@@ -1,26 +1,24 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import InputText from "./Components/InputText";
-import NavBar from "./Components/NavBar";
+import { makeStyles } from "@material-ui/core/styles";
+import WelcomePage from "../src/Components/Pages/WelcomePage";
 
-function App() {
-  const menu=[{
-    id:1,
-    text:"Form Demo One",
-    url:'#',
-  },{
-    id:2,
-    text:"Form Demo Two",
-    url:'#',
-  }];
-  const hello=["First Name","Second Name"];
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: theme.spacing(1)
+  },
+  highlight: {
+    backgroundColor: 'red',
+  }
+}));
+function App() {  
+  
   return (
-    <div className="App">
-      <NavBar title="SomeTitle" menu={menu} />
-      <div className="container">
-        <InputText label={hello}/>
-      </div>
+    <div className={useStyles.root}>
+      <WelcomePage />
     </div>
   );
 }

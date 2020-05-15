@@ -1,32 +1,18 @@
-import React, { Component } from 'react'
-import NavBar from "../NavBar";
+import React, { Component } from "react";
+import InputText from "../InputText";
+import MainPage from "./MainPage";
 
 export default class FormDemoOne extends Component {
-    render() {
-        menus:[{
-            id:1,
-            text:"Home",
-            url:'/',
-        },{
-            id:2,
-            text:"About Me",
-            url:'/about',
-        },{
-            id:3,
-            text:"Projects",
-            url:'/projects',
-        },{
-            id:4,
-            text:"Contact",
-            url:'/contact',
-        }]
-        return (
-            <div>
-                <NavBar menu={menus}/>
-                <div className="container">
-                    <h3>Page One Demo</h3>
-                </div>
-            </div>
-        )
-    }
+  render() {
+    const hello = ["First Name", "Second Name"];
+    return (
+      <MainPage>
+        <div>
+          <div className="container">
+            
+          </div>
+        </div>
+      </MainPage>
+    );
+  }
 }
