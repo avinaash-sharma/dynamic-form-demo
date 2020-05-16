@@ -5,14 +5,9 @@ import MainPage from "./MainPage";
 export default class FormDemoOne extends Component {
   render() {
     const hello = ["First Name", "Second Name"];
+    console.log("Hello");
     return (
-      <MainPage>
-        <div>
-          <div className="container">
-            
-          </div>
-        </div>
-      </MainPage>
+     <h1>Hi</h1>
     );
   }
 }

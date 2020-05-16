@@ -6,15 +6,16 @@ export default class WelcomePage extends Component {
     constructor(props){
         super(props);
         this.state={
-            authenticated:true,
+            authenticated:false,
             isLoading:false,
         }
     }
     
     render() {
+        console.log("Hello From WelcomePage");
         return (
             <div>
-                {this.state.authenticated ? (
+                {this.state.authenticated && !this.state.isLoading ? (
                     <MainPage />
                 ) : (
                     <Login />

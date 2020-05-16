@@ -5,9 +5,9 @@ import FormControl from "@material-ui/core/FormControl";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import "./inputText.css";
-import { Link } from "react-router-dom";
-
-import BorderWrapper from "react-border-wrapper";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 export default class InputText extends Component {
   constructor(props) {
@@ -21,53 +21,81 @@ export default class InputText extends Component {
 
   render() {
     console.log("HelloWrold");
+    console.log(this.props);
     return (
       <Container maxWidth="sm">
         <div>
           <FormControl fullWidth>
             <form validate autoComplete="off">
-              {this.state.label.map((element) => {
+              {this.state.label.map((element, index) => {
                 return (
-                  <div key={element} style={{ paddingBottom: "10px" }}>
+                  <div key={index} style={{ paddingBottom: "10px" }}>
                     {console.log("inside return")}
-                    <TextField
-                      label={element}
-                      validate shrink
-                      type={
-                        element === "email"
-                          ? "email"
-                          : element === "password"
-                          ? "password"
-                          : element === "phone"
-                          ? "number"
-                          : "text"
-                      }
-                      required
-                      fullWidth
-                      variant="outlined"
-                    />
+                    {element === "name" ? (
+                      <div>
+                        <TextField
+                          style={{ paddingBottom: "10px" }}
+                          key="firstName"
+                          label="First Name"
+                          validate
+                          type="text"
+                          required
+                          fullWidth
+                          variant="outlined"
+                        />
+                        <TextField
+                          key="lastName"
+                          label="Last Name"
+                          validate
+                          type="text"
+                          required
+                          fullWidth
+                          variant="outlined"
+                        />
+                      </div>
+                    ): (
+                      <TextField
+                        label={element.toUpperCase()}
+                        validate
+                        type={
+                          element === "email"
+                            ? "email"
+                            : element === "password"
+                            ? "password"
+                            : element === "phone"
+                            ? "number"
+                            : "text"
+                        }
+                        required
+                        fullWidth
+                        variant="outlined"
+                      />
+                    )}
                   </div>
                 );
               })}
               {this.state.submitButtonText !== "" ? (
                 <Button
-                variant="contained"
-                type="submit"
-                fullWidth
-                color="primary"
-              >
-                {this.state.submitButtonText}
-              </Button>
-              ) : ""}
-              
+                  variant="contained"
+                  type="submit"
+                  fullWidth
+                  color="primary"
+                >
+                  {this.state.submitButtonText}
+                </Button>
+              ) : (
+                ""
+              )}
             </form>
           </FormControl>
           {this.state.forgotOption === "true" ? (
             <a href="#forgotPassword" style={{ right: "39px" }}>
-            Forgot password?
-          </a>
-          ) : ""}
-          
+              Forgot password?
+            </a>
+          ) : (
+            ""
+          )}
+
           <hr />
         </div>
       </Container>

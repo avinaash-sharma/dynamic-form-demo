@@ -8,14 +8,14 @@ function MainPage({children}) {
   const menu=[{
     id:1,
     text:"Form Demo One",
-    url:'/formDemoOne',
+    url:'/FormDemoOne',
   },{
     id:2,
     text:"Form Demo Two",
     url:'/formDemoTwo',
   }];
   const radio=[];
-  
+  console.log("Hello from MainPage")
   return (
     <div className="App">
       <NavBar title="SomeTitle" menu={menu} />
