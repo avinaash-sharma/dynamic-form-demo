@@ -6,7 +6,7 @@ export default class WelcomePage extends Component {
     constructor(props){
         super(props);
         this.state={
-            authenticated:false,
+            authenticated:true,
             isLoading:false,
         }
     }
