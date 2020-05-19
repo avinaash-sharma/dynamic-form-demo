@@ -6,6 +6,7 @@ import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import "./inputText.css";
 import Radio from "@material-ui/core/Radio";
+import FormLabel from "@material-ui/core/FormLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
@@ -53,7 +54,27 @@ export default class InputText extends Component {
                           variant="outlined"
                         />
                       </div>
-                    ): (
+                    ) : element === "radioButton" ? (
+                      <div key={index}>
+                        <FormLabel component="legend">
+                          {this.props.radioParameter}
+                        </FormLabel>
+                        <RadioGroup
+                          aria-label="gender"
+                          name="gender1"
+
+                          // onChange={handleChange}
+                        >
+                          {this.props.radioData.map((radioButton, index) => {
+                           return (<FormControlLabel
+                              value={radioButton}
+                              control={<Radio />}
+                              label={radioButton}
+                            />)
+                          })}
+                        </RadioGroup>
+                      </div>
+                    ) : (
                       <TextField
                         label={element.toUpperCase()}
                         validate

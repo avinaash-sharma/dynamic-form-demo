@@ -16,8 +16,9 @@ export default class Register extends Component {
         }
     }
   render() {
-    const fieldName = ["name","phone", "email", "password"];
+    const fieldName = ["name","phone", "email", "password","radioButton"];
     const submitButtonText = "Sign Up";
+    const radioParameter="Gender"
     const radioData = ["male","female","tiktoker"];
 	
     const data = {"option1": "Value1", "option2" : "Value2"}
@@ -27,8 +28,8 @@ export default class Register extends Component {
       <InputText
         label={fieldName}
         submitButtonText={submitButtonText}
-        radioButtons={radioData}
-		radioParameter="gender"
+        radioData={radioData}
+		    radioParameter={radioParameter}
         dropDown={data}
         csvUploader
       />
