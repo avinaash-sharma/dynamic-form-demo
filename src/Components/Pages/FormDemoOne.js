@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import InputText from "../InputText";
+import InputText from "../ReusableComponents/InputText";
 import MainPage from "./MainPage";
 
 export default class FormDemoOne extends Component {

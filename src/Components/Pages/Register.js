@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import InputText from "../InputText";
+import InputText from "../ReusableComponents/InputText";
 
 import GoogleLogo from "../../google.png";
 import Button from "@material-ui/core/Button";
